@@ -12,12 +12,12 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
-                 script{
-                        dir("terraformcode")
-                        {
-                            git "https://github.com/AjaySurwase/Project1.git"
-                        }
+                 {
+                    dir("terraformcode") {
+                        // Checkout the repository
+                        git branch: 'main', url: 'https://github.com/AjaySurwase/Project1.git'
                     }
+                }
                 }
             }
 
