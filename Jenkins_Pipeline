@@ -11,6 +11,15 @@ pipeline {
     agent any
 
     stages {
+
+        stage('Cleanup') {
+            steps {
+                script {
+                    // Deletes all contents of the workspace
+                    deleteDir()
+                }
+            }
+        }
         stage('checkout') {
             steps {
                 script {
